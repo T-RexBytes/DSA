@@ -26,4 +26,5 @@ int main(){
     cout << "Enter A Number = ";
     cin >> n;
     cout << "The Sum Is : " << func(n) << endl;
+    return 0;
 }
