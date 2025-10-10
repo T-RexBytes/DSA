@@ -13,7 +13,6 @@ int main()
     for(int i=1;i<n;i++){
         if(arr[i]>largest){
             largest=arr[i];
-            break;
         }
     }
     std::cout<<largest;
