@@ -1,1 +1,7 @@
 *.exe
+/Array
+
+# Ignore development and configuration folders
+.devcontainer/
+.github/
+.vscode/
