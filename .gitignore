@@ -1,7 +1,10 @@
+# Ignore all executable files
 *.exe
-/Array
 
 # Ignore development and configuration folders
 .devcontainer/
 .github/
 .vscode/
+
+# Ignore build and output directories
+/Array/*.exe
