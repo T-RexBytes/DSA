@@ -10,7 +10,7 @@ int main()
         std::cin>>arr[i];
     }
     int smallest = arr[0];
-    int second = INT_MIN;
+    int second = INT_MAX;
     for(int i=0;i<n;i++){
         if(arr[i]<smallest){
             second = smallest;
@@ -20,7 +20,7 @@ int main()
             second = arr[i];
         }
     }
-    if(second == INT_MIN)
+    if(second == INT_MAX)
         std::cout << "All the elements of the array is equal..";
     else
         std::cout<< "second smallest element is : " << second << std::endl;
