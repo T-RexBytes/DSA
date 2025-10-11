@@ -8,3 +8,4 @@
 
 # Ignore build and output directories
 /Array/*.exe
+/Array/*.tldr
