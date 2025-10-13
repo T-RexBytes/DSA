@@ -20,6 +20,7 @@ int main(){
     std::cin>>n;
     std::cout << "How many elements do you want to move = ";
     std::cin >> d;
+    d%=n;
     int arr[n];
     for(int i=0;i<n;i++){
         std::cout<<"Enter element "<<i+1<<": ";
