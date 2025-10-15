@@ -6,7 +6,7 @@ int main()
     std::cin>>n;
     int arr[n];
     for(int i=0;i<n;i++){
-        std::cout<<"Enter element "<<i+1<<": ";
+        std::cout<<"Enter element "<< i+1 <<": ";
         std::cin>>arr[i];
     }
     int smallest=arr[0];
