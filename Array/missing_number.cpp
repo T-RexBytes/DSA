@@ -15,7 +15,7 @@ public:
     }
 };
 
-// this is the xor approach
+// this is the xor approach (two xor at a time)
 
 class Solution {
 public:
@@ -27,5 +27,18 @@ public:
         }
         xor1 ^= nums.size();             
         return xor1 ^ xor2;    
+    }
+};
+
+// using three xor at a time
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int missing = nums.size(); 
+        for(int i = 0; i < nums.size(); i++) {
+            missing ^= i ^ nums[i]; 
+        }
+        return missing;
     }
 };
