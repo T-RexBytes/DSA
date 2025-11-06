@@ -1,33 +1,33 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>> res;
-        sort(nums.begin(), nums.end());
-
-        for(int i = 0; i < nums.size(); i++){
-            if(i > 0 && nums[i] == nums[i-1]) continue;
-            int l = i + 1;
-            int r = nums.size() - 1;
-            while(l < r){
-                int sum = nums[i] + nums[l] + nums[r];
-
-                if(sum < 0){
-                    l++;
-                }
-                else if(sum > 0){
-                    r--;
-                }
-                else{ // Found valid triplet
-                    res.push_back({nums[i], nums[l], nums[r]});
-                    l++; 
-                    r--;
-
-                    // Skip duplicate for l and r
-                    while(l < r && nums[l] == nums[l-1]) l++;
-                    while(l < r && nums[r] == nums[r+1]) r--;
+    vector<vector<int>> threeSum(vector<int>& nums){
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        vector<vector<int>>lol;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>0) break;
+            if(i>0 && nums[i]==nums[i-1]) continue;
+            int j=i+1,k=n-1;
+            while(j<k)
+            {
+               int m=nums[i]+nums[j]+nums[k];
+               if(m>0)
+                    k--;
+                else if(m<0)
+                    j++;
+                else
+                {
+                    lol.push_back({nums[i],nums[j],nums[k]});
+                    j++;
+                    k--;
+                    while(j<k && nums[j]==nums[j-1])
+                    {
+                       j++;
+                    }
                 }
             }
         }
-        return res;
+        return lol;
     }
 };
