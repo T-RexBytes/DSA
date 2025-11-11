@@ -10,11 +10,9 @@ private:
         }
         return totalSum;
     }
-
 public:
     bool isHappy(int n) {
         if (n <= 0) return false;
-        
         // Tortoise and Hare pointers
         int slow = n;
         int fast = n;
@@ -22,8 +20,7 @@ public:
         do {
             slow = getNext(slow);         // Slow moves one step
             fast = getNext(getNext(fast)); // Fast moves two steps
-        } while (slow != fast && slow != 1); // Continue until they meet or slow reaches 1
-
+        } while (slow != fast && slow != 1); // Continue until they meet or slow reaches 
         // If slow is 1, it's a happy number
         return slow == 1;
     }
