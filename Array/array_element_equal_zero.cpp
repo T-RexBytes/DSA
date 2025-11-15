@@ -16,8 +16,10 @@ public:
                     valid += 1;
                 }
             }
+            
             leftSum += nums[i];
         }
+        
         return valid;
     }
 };
