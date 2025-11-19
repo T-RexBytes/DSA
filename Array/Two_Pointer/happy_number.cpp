@@ -16,7 +16,6 @@ public:
         // Tortoise and Hare pointers
         int slow = n;
         int fast = n;
-
         do {
             slow = getNext(slow);         // Slow moves one step
             fast = getNext(getNext(fast)); // Fast moves two steps
