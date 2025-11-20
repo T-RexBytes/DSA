@@ -8,9 +8,9 @@ public:
                 i=0;                //this means the loop will be starting from the first again
             }
             else{
-                i++;
+                i++;                //if the original couldn't be found i will increase
             }
         }
-        return original;
+        return original;            //at the end original would be returned
     }
 };
