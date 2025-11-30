@@ -1,21 +1,30 @@
-class Solution:
-    def minSubarray(self, nums: list[int], p: int) -> int:
-        total = sum(nums) % p
-        if total == 0:
-            return 0
+class Solution {
+public:
+    int minSubarray(vector<int>& nums, int p) {
+        long long total = 0;
+        for (int x : nums) total += x;
+        
+        int target = total % p;
+        if (target == 0) return 0;
 
-        seen = {0: -1}      # prefix_mod -> latest index
-        pref = 0
-        best = len(nums) + 1
+        unordered_map<int,int> mp;
+        mp[0] = -1;
 
-        for i, x in enumerate(nums):
-            pref = (pref + x) % p
-            need = (pref - total) % p
-            if need in seen:
-                length = i - seen[need]
-                if length < best:
-                    best = length
-            # store latest index for this prefix mod
-            seen[pref] = i
+        long long pref = 0;
+        int ans = nums.size();
 
-        return best if best <= len(nums) - 1 else -1
+        for (int i = 0; i < nums.size(); i++) {
+            pref = (pref + nums[i]) % p;
+
+            int need = (pref - target + p) % p;
+
+            if (mp.count(need)) {
+                ans = min(ans, i - mp[need]);
+            }
+
+            mp[pref] = i;   // MUST store latest index
+        }
+
+        return ans == nums.size() ? -1 : ans;
+    }
+};
