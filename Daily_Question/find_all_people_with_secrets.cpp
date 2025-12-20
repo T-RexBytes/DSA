@@ -37,7 +37,7 @@ public:
         }
         vector<int> ans;
         for (int i = 0; i < n; ++i) {
-            if (uf.connected(0, i)) ans.push_back(i); // Push all the persons who are connected with person 0 into answer array
+            if (uf.connected(0, i)) ans.push_back(i); // Push all persons who are connected with person 0 into answer array
         }
         return ans;
     }
